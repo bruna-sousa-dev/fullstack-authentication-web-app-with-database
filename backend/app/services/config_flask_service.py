@@ -21,7 +21,7 @@ class ConfigAppFlask:
     SESSION_COOKIE_PATH = "/"  # Torna o cookie acessível para toda a aplicação
 
     # Configuração do banco de dados SQLite via SQLAlchemy
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'sqlite:///users.db')  # Usa variável de ambiente ou banco local
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")  # Pegará a variável de ambiente que o Render definirá automaticamente
     SQLALCHEMY_TRACK_MODIFICATIONS = False  # Desativa rastreamento de modificações para melhorar desempenho e evitar alertas
 
 # Aplica CORS (Cross-Origin Resource Sharing) à aplicação Flask

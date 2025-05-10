@@ -2,7 +2,6 @@
 from flask import Flask
 from flask_cors import CORS  # Permite requisições entre diferentes domínios (Cross-Origin Resource Sharing)
 from flask_login import LoginManager  # Gerencia autenticação de usuários
-from flask_migrate import Migrate  # Gerencia migrações de banco de dados
 from flask_sqlalchemy import SQLAlchemy  # ORM para interagir com bancos de dados relacionais
 
 # Importa configurações e funções auxiliares
@@ -10,7 +9,6 @@ from .services.config_flask_service import ConfigAppFlask, apply_cors, configure
 
 # Instancia objetos globais das extensões, mas sem associá-los ainda ao app
 db = SQLAlchemy()
-migrate = Migrate()
 login_manager = LoginManager()
 
 # Função que cria e configura a aplicação Flask
@@ -23,7 +21,6 @@ def create_app():
 
     # Inicializa as extensões com o app já criado
     db.init_app(app)
-    migrate.init_app(app, db)
     login_manager.init_app(app)
 
     # Configura o CORS para permitir requisições de outros domínios, incluindo envio de cookies
