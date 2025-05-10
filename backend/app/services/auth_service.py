@@ -1,5 +1,9 @@
 # Importações do Flask-Login para gerenciar sessões de usuário
 from flask_login import login_user, logout_user, current_user
+# Importações para criação do usuário de administrador
+from dotenv import load_dotenv
+import os
+from werkzeug.security import generate_password_hash
 
 # Serviço para realizar login de um usuário
 def login_user_service(User, username, password, db):
@@ -103,3 +107,15 @@ def del_user_service(User, db, current_user, del_user):
     db.session.commit()
 
     return {"message": "Usuário excluído com sucesso!"}
+
+def create_default_user_service(User, db):
+    load_dotenv()
+    default_email = "admin@mail.com"
+    default_password = os.getenv("DEFAULT_PASSWORD")
+    default_password_hash = generate_password_hash(default_password)
+
+    user = User.query.filter_by(username = default_email).first()
+    if not user:
+        new_user = User(username = default_email, password_hash = default_password_hash)
+        db.session.add(new_user)
+        db.session.commit()
