@@ -1,0 +1,17 @@
+services:
+  web:
+    build: .
+    container_name: flask_api
+    image: fullstackauthenticationwebappwithdatabase
+    ports:
+      - "5000:5000"  # HOST:CONTAINER
+      - "80:80"
+      - "443:443"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - sqlite_data:/app/instance 
+
+volumes:
+  sqlite_data:
