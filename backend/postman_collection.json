@@ -247,87 +247,6 @@
 			"response": []
 		},
 		{
-			"name": "hello world",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var template = `\r",
-							"<style type=\"text/css\">\r",
-							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
-							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
-							"    .tftable tr {background-color:#ffffff;}\r",
-							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
-							"    .tftable tr:hover {background-color:#e0ffff;}\r",
-							"</style>\r",
-							"\r",
-							"<table class=\"tftable\" border=\"1\">\r",
-							"    <tr>\r",
-							"        <th>ART</th>\r",
-							"        <th>ATR</th>\r",
-							"        <th>ArCaldo</th>\r",
-							"        <th>ArCana</th>\r",
-							"        <th>BRIX</th>\r",
-							"        <th>Isoporizacao</th>\r",
-							"        <th>PolCaldo</th>\r",
-							"        <th>Pureza</th>\r",
-							"    </tr>\r",
-							"    <tr>\r",
-							"        <td>{{response.ART}}</td>\r",
-							"        <td>{{response.ATR}}</td>\r",
-							"        <td>{{response.ArCaldo}}</td>\r",
-							"        <td>{{response.ArCana}}</td>\r",
-							"        <td>{{response.BRIX}}</td>\r",
-							"        <td>{{response.Isoporizacao}}</td>\r",
-							"        <td>{{response.PolCaldo}}</td>\r",
-							"        <td>{{response.Pureza}}</td>\r",
-							"    </tr>\r",
-							"</table>\r",
-							"`;\r",
-							"\r",
-							"function constructVisualizerPayload() {\r",
-							"    return { response: pm.response.json() }\r",
-							"}\r",
-							"\r",
-							"pm.visualizer.set(template, constructVisualizerPayload());"
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/hello_world",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"hello_world"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "get test user",
 			"request": {
 				"method": "GET",
@@ -375,6 +294,28 @@
 					"port": "5000",
 					"path": [
 						"del_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hello world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/hello_world",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"hello_world"
 					]
 				}
 			},
