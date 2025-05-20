@@ -241,13 +241,13 @@ Você pode executar esta aplicação localmente de três maneiras: utilizando a 
 
 A imagem está disponível publicamente no Docker Hub.
 
-Link da Imagem: [Acesse a imagem Docker aqui]() ??
+Link da Imagem: [Acesse a imagem Docker aqui](https://hub.docker.com/r/brunasousadev/fullstackauthenticationwebappwithdatabase)
 
 Como baixar e executar:
 
 ```docker
-docker pull usuario_dockerhub/nome-da-api:latest ??
-docker run -d -p 5000:5000 usuario_dockerhub/nome-da-api ??
+docker pull brunasousadev/fullstackauthenticationwebappwithdatabase
+docker run -d -p 5000:5000 brunasousadev/fullstackauthenticationwebappwithdatabase
 ```
 
 ---
