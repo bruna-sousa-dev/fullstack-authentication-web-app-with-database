@@ -247,8 +247,8 @@ Certifique-se de ter o Docker instalado em sua máquina: [Instalar Docker](https
 Passos:
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/bruna-sousa-dev/fullstack-authentication-web-app-with-database.git
+cd fullstack-authentication-web-app-with-database
 cd backend
 
 # Construa a imagem Docker
@@ -270,8 +270,8 @@ Pré-requisitos:
 #### Passos:
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/bruna-sousa-dev/fullstack-authentication-web-app-with-database.git
+cd fullstack-authentication-web-app-with-database
 cd backend
 
 # (Opcional) Crie e ative um ambiente virtual
@@ -369,22 +369,6 @@ Requisição POST /login
 
 ---
 
-## 📌 Considerações Finais
-
-Esta aplicação demonstra a implementação de uma arquitetura Full Stack modular, segura e escalável, ideal como base para projetos reais de autenticação de usuários. A separação entre frontend e backend promove a reutilização de componentes e facilita o deploy em ambientes distintos.
-
-Além disso:
-
-* O uso de Flask-Login e Werkzeug Security garante sessões e senhas criptografadas.
-* A documentação dos endpoints e a explicação dos arquivos Docker facilitam a contribuição e o aprendizado.
-* A decisão de não usar docker-compose torna o deploy em serviços como a Render mais simples e direto.
-* O uso de arquivos como .htaccess, robots.txt e sitemap.xml no frontend demonstra preocupação com SEO e boas práticas de cache.
-
-#### Sugestão de melhoria futura:
-Implementar testes automatizados para os endpoints da API com ferramentas como pytest ou Postman + newman.
-
----
-
 # 📄 Licença
 Este projeto está licenciado sob a Licença MIT.
 Você pode usá-lo, modificá-lo, distribuí-lo e até mesmo integrá-lo em seus próprios projetos — seja para estudo, aprendizado ou criação de novos sistemas.
@@ -413,6 +397,23 @@ Você pode contribuir de várias formas:
 
 #### Toda ajuda é valiosa! Mesmo sugestões pequenas fazem a diferença ❤️
 
+---
+
+## 📌 Considerações Finais
+
+Esta aplicação demonstra a implementação de uma arquitetura Full Stack modular, segura e escalável, ideal como base para projetos reais de autenticação de usuários. A separação entre frontend e backend promove a reutilização de componentes e facilita o deploy em ambientes distintos.
+
+Além disso:
+
+* O uso de Flask-Login e Werkzeug Security garante sessões e senhas criptografadas.
+* A documentação dos endpoints e a explicação dos arquivos Docker facilitam a contribuição e o aprendizado.
+* A decisão de não usar docker-compose torna o deploy em serviços como a Render mais simples e direto.
+* O uso de arquivos como .htaccess, robots.txt e sitemap.xml no frontend demonstra preocupação com SEO e boas práticas de cache.
+
+#### Sugestão de melhoria futura:
+Implementar testes automatizados para os endpoints da API com ferramentas como pytest ou Postman + newman.
+
+---
 
 ## 👩‍💻 Sobre a Autora
-Sou engenheira de software com experiência em desenvolvimento backend, infraestrutura e DevOps. Este repositório é parte do meu portfólio de projetos que demonstram habilidades práticas com conteinerização e deploy contínuo.
+Sou engenheira de software com experiência em desenvolvimento backend, infraestrutura e DevOps. Este repositório é parte do meu portfólio de projetos que demonstram habilidades práticas com conteinerização e deploy contínuo. ??
