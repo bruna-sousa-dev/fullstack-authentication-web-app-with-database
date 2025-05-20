@@ -2,7 +2,9 @@
 
 **Solução Full Stack desacoplada para autenticação de usuários com gerenciamento de banco de dados PostgreSQL.**
 
-🔗 [Acesse o frontend para testar a aplicação](??)
+🔗 [Clique aqui para testar a aplicação](??)
+
+🔗 [Clique aqui para acessar a imagem Docker do backend](https://hub.docker.com/r/brunasousadev/fullstackauthenticationwebappwithdatabase)
 
 ## 🌐 Overview
 
