@@ -38,7 +38,7 @@ def check_session_service():
 def register_user_service(User, db, current_user, username, password):
     # Verifica se o usuário atual tem permissão para registrar outros (admin hardcoded)
     if current_user.username not in ["admin@mail.com"]:
-        return {"unauthorized": "Somente o administrador pode realizar o cadastro de novos usuários!"}
+        return {"unauthorized": "Somente o administrador pode realizar o cadastro de novos usuários! ;)"}
 
     # Verifica se os campos obrigatórios foram preenchidos
     if not username or not password:
@@ -69,7 +69,7 @@ def edit_user_service(User, db, current_user, current_username, new_username=Non
     user = User.query.filter_by(username=current_username).first()
 
     if current_user.username not in ["admin@mail.com"]:
-        return {"unauthorized": "Somente o administrador pode editar o usuário do administrador!"}
+        return {"unauthorized": "Somente o administrador pode editar usuários! ;)"}
 
     # Se o usuário não foi encontrado, retorna erro
     if not user:
