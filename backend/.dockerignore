@@ -1,2 +1,4 @@
 **/__pycache__
 venv
+.pre-commit-config.yaml
+postman_collection.json

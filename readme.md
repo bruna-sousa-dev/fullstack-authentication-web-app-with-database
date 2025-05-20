@@ -191,6 +191,18 @@ venv
 * Ignora o diretório venv, que é utilizado para armazenar o ambiente virtual local de desenvolvimento.
 * Esse ambiente não deve ser incluído na imagem Docker, pois a imagem já define seu próprio ambiente baseado em uma imagem oficial do Python (python:3.11-slim), incluir o venv local poderia causar conflitos de dependências e aumentar desnecessariamente o tamanho da imagem e, a instalação de dependências é tratada de forma isolada com pip install -r requirements.txt.
 
+```.dockerignore
+.pre-commit-config.yaml
+```
+* Esse arquivo é usado para configurar o Pre-commit, uma ferramenta que executa "ganchos" antes de você fazer um commit, como verificação de formatação, lint, remoção de espaços em branco, etc.
+* Esse tipo de configuração é relevante apenas para desenvolvimento local. Ele não precisa estar na imagem Docker final, já que não influencia na execução do aplicativo em produção. Ignorá-lo evita enviar arquivos desnecessários ao docker build.
+
+```.dockerignore
+postman_collection.json
+```
+* Esse é um arquivo de exportação do Postman, contendo uma coleção de requisições HTTP para testar APIs.
+* Esse arquivo é útil para testes locais ou documentação da API, mas não é necessário no ambiente de execução do container. Incluir esse arquivo na imagem só aumentaria o tamanho sem motivo.
+
 #### Benefícios de um .dockerignore bem configurado:
 * Performance: evita a cópia de arquivos desnecessários, acelerando o build.
 * Segurança: impede que arquivos sensíveis ou irrelevantes sejam enviados para a imagem.
