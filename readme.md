@@ -2,7 +2,7 @@
 
 **Solução Full Stack desacoplada para autenticação de usuários com gerenciamento de banco de dados PostgreSQL.**
 
-🔗 [Clique aqui para testar a aplicação](??)
+🔗 [Clique aqui para testar a aplicação](https://bruna-sousa-dev.github.io/fullstack-authentication-web-app-with-database)
 
 🔗 [Clique aqui para acessar a imagem Docker do backend](https://hub.docker.com/r/brunasousadev/fullstackauthenticationwebappwithdatabase)
 
@@ -29,7 +29,7 @@ Essa estrutura separada entre cliente e servidor segue as práticas modernas de 
 
 - **Frontend**
   - Site estático (HTML, CSS, JavaScript)
-  - Hospedado em ??
+  - Hospedado em GitHub Pages
   - Interação com o backend por meio de solicitações HTTP seguras
 
 ---
@@ -89,7 +89,7 @@ O sistema de autenticação é implementado usando [Flask-Login](https://flask-l
 
 ### ➡️ Frontend
 - HTML5 + CSS3 + JavaScript
-- Github Pages ??
+- Github Pages
 - .htaccess – configuração de cache para garantir que os arquivos atualizados sejam carregados
 - robots.txt – bloqueio de indexação por mecanismos de busca protegendo áreas específicas
 - sitemap.xml – definição da estrutura de URL para indexação eficiente por mecanismos de busca
@@ -430,4 +430,12 @@ Implementar testes automatizados para os endpoints da API com ferramentas como p
 ---
 
 ## 👩‍💻 Sobre a Autora
-Sou engenheira de software com experiência em desenvolvimento backend, infraestrutura e DevOps. Este repositório é parte do meu portfólio de projetos que demonstram habilidades práticas com conteinerização e deploy contínuo. ??
+Engenheira eletricista com especialização em Ciência de Dados e Inteligência Artificial, atuando profissionalmente no desenvolvimento de software, com foco em backend, infraestrutura e DevOps.
+
+Possuo experiência consolidada no desenvolvimento de APIs RESTful utilizando Flask, integrando sistemas baseados em Inteligência Artificial e realizando sua implantação em ambientes de produção com servidores VPS Linux, utilizando Nginx como proxy reverso, Gunicorn como servidor de aplicações e orquestração de serviços com Docker e Docker Compose.
+
+Além disso, desenvolvo interfaces frontend estáticas que consomem essas APIs, promovendo a integração eficiente entre as camadas de apresentação e lógica de negócios.
+
+Atuo também no desenvolvimento de sistemas industriais de Internet das Coisas (IoT), com ênfase na implementação de soluções utilizando o protocolo LoRaWAN para comunicação de longa distância e baixa potência.
+
+Este repositório integra meu portfólio de projetos, com o objetivo de demonstrar competências técnicas nas áreas de conteinerização, automação de deploy e integração contínua.
