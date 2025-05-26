@@ -38,19 +38,4 @@ async function getTestUser() {
     }
 }
 
-if (window.location.pathname.includes("index.html")) getTestUser();
-
-// let response = await fetch(`${API_BASE_URL}/get_test_user`, { 
-//     method: "GET",
-//     credentials: "include",
-//     headers: {
-//         "Content-Type": "application/json"
-//     }
-// });
-
-// let data = await response.json();
-// if (response.ok) {
-//     document.getElementById('test-user-username').innerHTML = data.username;
-// } else {
-//     document.getElementById('test-user-username').innerHTML = "test_user@mail.com";
-// }
+getTestUser();
