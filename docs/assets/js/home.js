@@ -48,7 +48,7 @@ async function debugSession() {
 
     let data = await response.json();
     if (response.ok && data.session != {}) {
-        document.getElementById('debug-session-response').innerHTML = data.session._user_id;
+        document.getElementById('debug-session-response').innerHTML = `ID do usuário: ${data.session._user_id}`;
         document.getElementById('debug-session-response').style.visibility = 'visible';
     } else {
         document.getElementById('debug-session-response').innerHTML = "Erro na requisição.";
@@ -67,7 +67,13 @@ async function listUsers() {
 
     let data = await response.json();
     if (response.ok) {
-        document.getElementById('users-response').innerHTML = data.users;
+
+        const usersResponse = document.getElementById("users-response");
+        let usernamesText = "";
+        for (let user of data.users) {
+            usernamesText += user.username + "; ";  // <br> para pular linha
+        }
+        usersResponse.innerHTML = usernamesText;
         document.getElementById('users-response').style.visibility = 'visible';
     } else {
         document.getElementById('users-response').innerHTML = "Erro na requisição.";
@@ -100,7 +106,9 @@ async function editUser() {
         window.location.href = "../../index.html";
         return;
     }
-
+    
+    document.getElementById('edit-user-response').innerHTML = "Somente o administrador pode editar usuários! ;)";
+    document.getElementById('edit-user-response').style.visibility = 'visible';
     let response = await fetch(`${API_BASE_URL}/edit_user/${currentUser}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -108,50 +116,32 @@ async function editUser() {
         credentials: "include",
     });
     let data = await response.json();
-    if (response.unauthorized) {
-        document.getElementById('edit-user-respons').innerHTML = data.unauthorized;
-        document.getElementById('edit-user-respons').style.visibility = 'visible';
-    } else {
-        document.getElementById('edit-user-respons').innerHTML = "Erro na requisição.";
-        document.getElementById('edit-user-respons').style.visibility = 'visible';
-    }
-
+    
 }
 
 async function registerUser() {
+    document.getElementById('register-response').innerHTML = "Somente o administrador pode registrar novos usuários! ;)";
+    document.getElementById('register-response').style.visibility = 'visible';
     let response = await fetch(`${API_BASE_URL}/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: "test_user_other@mail.com", password: "123456789" })
     });
-
     let data = await response.json();
-    if (response.unauthorized) {
-        document.getElementById('register-response').innerHTML = data.unauthorized;
-        document.getElementById('register-response').style.visibility = 'visible';
-    } else {
-        document.getElementById('register-response').innerHTML = "Erro na requisição.";
-        document.getElementById('register-response').style.visibility = 'visible';
-    }
+    
 }
 
 async function delUser() {
+    document.getElementById('del-user-response').innerHTML = "Somente o administrador pode deletar usuários! ;)";
+    document.getElementById('del-user-response').style.visibility = 'visible';
     let response = await fetch(`${API_BASE_URL}/del_user`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: "test_user@mail.com" })
+        body: JSON.stringify({ username: "admin@mail.com" })
     });
-
     let data = await response.json();
-    if (response.unauthorized) {
-        document.getElementById('del-user-response').innerHTML = data.unauthorized;
-        document.getElementById('del-user-response').style.visibility = 'visible';
-    } else {
-        document.getElementById('del-user-response').innerHTML = "Erro na requisição.";
-        document.getElementById('del-user-response').style.visibility = 'visible';
-    }
 }
-
+    
 async function logout() {
     await fetch(`${API_BASE_URL}/logout`, {
         method: "GET",
