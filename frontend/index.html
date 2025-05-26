@@ -1,0 +1,60 @@
+<!-- index.html (Login) -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow"> <!-- Impede que os mecanismos de busca indexem a página -->
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"> 
+</head>
+<body>
+    
+    <div id="header-container"></div>
+
+    <div class="content">
+        <div id="test-user">
+            <h3>Utilize este usuário teste para logar</h3>
+            <span>Email: </span>
+            <span id="test-user-username"></span>
+            <span>Senha: 123456789</span>
+        </div>
+
+        <form id="form">
+            <div>
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" autocomplete="off">
+            </div>
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha">
+            </div>
+        </form>
+
+        <button onclick="login()">Entrar</button>
+        
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script>
+        let script = document.createElement("script");
+        script.src = "../assets/js/index.js?v=" + new Date().getTime();
+        script.defer = true; // Carrega o JS sem bloquear o HTML
+        document.body.appendChild(script);
+
+        fetch('/includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+        });
+
+        fetch('/includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!-- home.html (Página inicial) -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Home</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <div class="content-home">
+        <div id="test-endpoints-area">
+
+            <h2>Teste os endpoints da API rodando na Render</h2>
+
+            <div class="test-section">
+                <h4>Faça Hello World</h4>
+                <button onclick="hello()">/hello_world</button>
+                <p id="hello-world-response">Resposta</p>
+            </div>
+
+            <div class="test-section">
+                <h4>Cheque a sessão ativa</h4>
+                <button onclick="checkSession()">/check_session</button>
+                <p id="check-session-response">Resposta</p>
+            </div>
+
+            <div class="test-section">
+                <h4>Debugue a sessão ativa</h4>
+                <button onclick="debugSession()">/debug_session</button>
+                <p id="debug-session-response">Resposta</p>
+            </div>
+
+            <div class="test-section">
+                <h4>Liste os usuários</h4>
+                <button onclick="listUsers()">/users</button>
+                <p id="users-response">Resposta</p>
+            </div>
+
+            <div class="test-section">
+                <h4>Obter usuário de teste</h4>
+                <button onclick="getTestUser()">/get_test_user</button>
+                <p id="get-test-user-response">Resposta</p>
+            </div>
+
+            <div class="test-section">
+                <h4>Edite o usuário de teste</h4>
+                <button onclick="editUser()">/edit_user</button>
+                <p id="edit-user-response">Resposta</p>
+            </div>
+
+            <div class="test-section">
+                <h4>Registre um usuário</h4>
+                <button onclick="registerUser()">/register</button>
+                <p id="register-response">Resposta</p>
+            </div>
+
+            <div class="test-section">
+                <h4>Delete o usuário de teste</h4>
+                <button onclick="delUser()">/del_user</button>
+                <p id="del-user-response">Resposta</p>
+            </div>
+
+            <div class="test-section">
+                <h4>Faça o logout</h4>
+                <button onclick="logout()">/logout</button>
+            </div>
+
+            <div class="test-section">
+                <h4>Visite o repo</h4>
+                <button onclick="visitRepo()">GitHub</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script>
+        let script = document.createElement("script");
+        script.src = "../assets/js/home.js?v=" + new Date().getTime();
+        script.defer = true;
+        document.body.appendChild(script);
+
+        fetch('/includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+        });
+
+        fetch('/includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+</body>
+</html>
