@@ -32,7 +32,7 @@ def apply_cors(app):
         
         # Adiciona o cabeçalho 'Access-Control-Allow-Origin' apenas se ainda não estiver presente
         if "Access-Control-Allow-Origin" not in response.headers:
-            response.headers["Access-Control-Allow-Origin"] = "https://meu-dominio.com"  # Permite requisições apenas desse domínio
+            response.headers["Access-Control-Allow-Origin"] = "https://bruna-sousa-dev.github.io/fullstack-authentication-web-app-with-database"  # Permite requisições apenas desse domínio
 
         # Permite o envio de cookies e autenticação entre domínios
         response.headers["Access-Control-Allow-Credentials"] = "true"
