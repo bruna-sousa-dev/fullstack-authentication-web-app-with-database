@@ -11,7 +11,9 @@
 </head>
 <body>
     
-    <div id="header-container"></div>
+    <header class="header">
+        <img src="assets/images/logo.png" alt="Logo" class="header-logo">
+    </header>
 
     <div class="content">
         <div id="test-user">
@@ -36,25 +38,11 @@
         
     </div>
 
-    <div id="footer-container"></div>
+    <footer class="footer">
+        <p>Bruna Sousa Dev 2025© – Todos os direitos reservados</p>
+        <p>Política de Privacidade | Política de Cookies</p>
+    </footer>
 
-    <script>
-        let script = document.createElement("script");
-        script.src = "../assets/js/index.js?v=" + new Date().getTime();
-        script.defer = true; // Carrega o JS sem bloquear o HTML
-        document.body.appendChild(script);
-
-        fetch('/includes/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-        });
-
-        fetch('/includes/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-        });
-    </script>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
