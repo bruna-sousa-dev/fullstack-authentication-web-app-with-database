@@ -15,7 +15,7 @@ async function login() {
 
     if (response.ok) {
         sessionStorage.setItem("sessionUser", data.username);
-        window.location.href = "../../home.html";
+        window.location.href = "./home.html";
     } else {
         alert(data.error || "Usuário ou senha incorretos!");
     }

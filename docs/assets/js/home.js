@@ -159,7 +159,7 @@ async function logout() {
     });
 
     sessionStorage.removeItem("sessionUser");
-    window.location.href = "../../index.html";
+    window.location.href = "./index.html";
 }
 
 async function visitRepo() {
